@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão de Custo do Plano de Saúde</title>
+</head>
+
+<body>
+
+    <div style="color:rgb(250, 250, 250);" class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading'><span class="heading_font">Previsão de Custo do Plano de Saúde</span></h2>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <!-- Result -->
+		<div style="color:rgba(235, 97, 5, 0.884);" class="results">
+			<h1> {{prediction_text}}</h1>
+		</div>
+        </form>
+
+    </div>
+    <div>
+            <br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <p class='footer-description'>©2023 Christopher Filipe</p>
+
+    </div>
+
+
+<style>
+
+
+</body>
+
+</html>

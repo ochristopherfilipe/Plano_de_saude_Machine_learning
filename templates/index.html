@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Máquina de Previsão de Custo do Plano de Saúde</title>
+
+</head>
+<body>
+    <div style="color:#ffffff;" class="container">
+        <h2 class='container-heading'><span class="heading_font">Previsão de Custo do Plano de Saúde</span></h2>
+    </div>
+
+    <div style="color:black;" class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <br>
+            <br>
+            <h3>Idade</h3>
+            <input id="first" name="age" placeholder="Em anos" required="required">
+            <br>
+            <h3>Sexo</h3>
+            <select id="second" class="form-input align-center" name="sex">
+                <option value="None">Selecione</option>
+                <option value="sex_male">Masculino</option>
+                <option value="sex_female">Feminino</option>
+            </select>
+            <br>
+            <h3>Fumante</h3>
+            <select id="third" class="form-input align-center" name="smoker">
+                <option value="None">Selecione</option>
+                <option value="smoker_yes">Sim</option>
+                <option value="smoker_no">Não</option>
+            </select>
+            <br>
+            <h3>Índice de massa corporal</h3>
+            <input id="fourth" name="bmi" placeholder="IMC" required="required">
+            <br>
+            <h3>Número de Filhos</h3>
+            <input id="fifth" name="children" placeholder="0, 1, 2, 3, 4, 5" required="required">
+            <br>
+            <h3>Região</h3>
+            <select id="sixth" class="form-input align-center" name="region">
+                <option value="None">Região</option>
+                <option value="region_northwest">Norte</option>
+                <option value="region_southeast">Sul</option>
+                <option value="region_southwest">Sudeste</option>
+                <option value="region_northeast">Nordeste</option>
+                <option value="region_southwest">Centro-Oeste</option>
+
+            </select>
+            <br>
+            <br>
+            <br>
+            <button id="sub" type="submit ">Submeter</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class='footer-description'>@2023 Christopher Santos</p>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
