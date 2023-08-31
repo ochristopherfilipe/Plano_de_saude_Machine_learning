@@ -120,37 +120,37 @@ with st.container():
 
     st.write("O gráfico acima mostra uma diferença significativa entre fumantes e não fumantes, o que pode acarretar em um aumento no valor para fumantes.")
 
-
-# Arredondanr a Variável AGE
-train_data['age'] = round(train_data['age'])
-
-# Transformando varáveis em numéricas
-train_data = pd.get_dummies(train_data, drop_first=True)
-
-# Escolhendo só as variáveis que vou usar
-train_data = train_data[['age', 'bmi', 'children', 'region_southeast', 'sex_male', 'smoker_yes', 'region_northwest', 'region_southeast', 'charges']]
-
-# Separando os dados
-X = train_data.iloc[:, :-1]
-y = train_data.iloc[:, -1]
-
-# Separando dados de treino e teste:
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=0)
-
-# Arvore de regressão:
-RandomForestRegressor = RandomForestRegressor ()
-RandomForestRegressor = RandomForestRegressor.fit(X_train, y_train)
-
-# Predição:
-y_pred = RandomForestRegressor.predict(X_test)
-
-# pontuação:
-print(r2_score(y_test, y_pred))
-print(mean_squared_error(y_test, y_pred))
-
-# Creating a pickle file for the classifier
-filename = 'predicao_plano_de_saude.pkl'
-pickle.dump(RandomForestRegressor, open(filename, 'wb'))
+with st.container():
+    # Arredondanr a Variável AGE
+    train_data['age'] = round(train_data['age'])
+    
+    # Transformando varáveis em numéricas
+    train_data = pd.get_dummies(train_data, drop_first=True)
+    
+    # Escolhendo só as variáveis que vou usar
+    train_data = train_data[['age', 'bmi', 'children', 'region_southeast', 'sex_male', 'smoker_yes', 'region_northwest', 'region_southeast', 'charges']]
+    
+    # Separando os dados
+    X = train_data.iloc[:, :-1]
+    y = train_data.iloc[:, -1]
+    
+    # Separando dados de treino e teste:
+    X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=0)
+    
+    # Arvore de regressão:
+    RandomForestRegressor = RandomForestRegressor ()
+    RandomForestRegressor = RandomForestRegressor.fit(X_train, y_train)
+    
+    # Predição:
+    y_pred = RandomForestRegressor.predict(X_test)
+    
+    # pontuação:
+    print(r2_score(y_test, y_pred))
+    print(mean_squared_error(y_test, y_pred))
+    
+    # Creating a pickle file for the classifier
+    filename = 'predicao_plano_de_saude.pkl'
+    pickle.dump(RandomForestRegressor, open(filename, 'wb'))
 
 with st.container():
     st.title("Aplicativo de Predição de Custos de Plano de Saúde")
