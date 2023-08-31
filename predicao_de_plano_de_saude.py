@@ -94,8 +94,8 @@ with st.container():
 
         fig = go.Figure(data=[go.Pie(labels=labels, values=values, marker=dict(colors=custom_colors))])
 
-        st.subheader(" "
-        st.markdown("---"))
+        st.subheader(" ")
+        st.markdown("---")
         st.plotly_chart(fig, theme="streamlit")
 
     get_chart_28108359(data)
