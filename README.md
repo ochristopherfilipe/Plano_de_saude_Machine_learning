@@ -30,7 +30,7 @@ O conjunto de dados utilizado neste projeto contém informações sobre paciente
 
 ### Este projeto têm dois tipos de uso:
 ###  Para analistas:
-  * Abrir [este link]() para acessar o Streamlit com deploy de toda a análise realizada neste projeto com detalhes
+  * Abrir [este link](https://predicaoplanodesaudechristophersantos.streamlit.app/) para acessar o Streamlit com deploy de toda a análise realizada neste projeto com detalhes
   * acesse o site e siga os passos e as informações para
 
     
