@@ -46,8 +46,8 @@ with st.container():
     st.pyplot(fig)
 
 with st.container():
-    st.subheader("Verificando com Boxplot se existem outliers no dataset", divider='rainbow')
-
+    st.subheader("Verificando com Boxplot se existem outliers no dataset")
+    st.markdown("---")
     # Criando um boxplot
     fig, ax = plt.subplots(figsize=(6, 2))
     ax.boxplot(data["charges"], vert=False)
@@ -59,8 +59,8 @@ with st.container():
 
 
 with st.container():
-    st.subheader("Histograma - Idades dos pacientes", divider='rainbow')
-
+    st.subheader("Histograma - Idades dos pacientes")
+    st.markdown("---")
     # Criando um histograma 
     fig, ax = plt.subplots(figsize=(7, 2))
     ax.hist(data["age"], bins=50, edgecolor="black")
@@ -73,8 +73,8 @@ with st.container():
 
 
 with st.container():
-    st.subheader("Histograma - Índice de massa corporal", divider='rainbow')
-
+    st.subheader("Histograma - Índice de massa corporal")
+    st.markdown("---")
     # Criando um histograma 
     fig, ax = plt.subplots(figsize=(7, 2))
     ax.hist(data["bmi"], bins=50, edgecolor="black")
@@ -94,7 +94,8 @@ with st.container():
 
         fig = go.Figure(data=[go.Pie(labels=labels, values=values, marker=dict(colors=custom_colors))])
 
-        st.subheader(" ", divider = 'rainbow')
+        st.subheader(" "
+        st.markdown("---"))
         st.plotly_chart(fig, theme="streamlit")
 
     get_chart_28108359(data)
@@ -104,6 +105,7 @@ with st.container():
 
 with st.container():
     st.title("Distribuição de Fumantes")
+    st.markdown("---")
     def get_chart_28108359(data):
         labels = ['Fumante', 'Não fumante']
         values = [data['smoker'].value_counts()['yes'], data['smoker'].value_counts()['no']]
@@ -111,7 +113,7 @@ with st.container():
 
         fig = go.Figure(data=[go.Pie(labels=labels, values=values, marker=dict(colors=custom_colors))])
 
-        st.subheader(" ", divider = 'rainbow')
+        st.subheader(" ")
         st.plotly_chart(fig, theme="streamlit")
 
     get_chart_28108359(data)
@@ -152,6 +154,7 @@ with st.container():
 
 with st.container():
     st.title("Aplicativo de Predição de Custos de Plano de Saúde")
+    st.markdown("---")
 
 
     # Widgets para inserção de valores
