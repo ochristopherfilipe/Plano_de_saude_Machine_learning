@@ -22,7 +22,7 @@ st.subheader('Nossa máquina de predição de custos de plano de saúde é basea
 train_data = pd.read_csv('Train_Data.csv')
 
 
-@st.cache_data
+@st.cache
 def load_data(nrows):
     data = train_data
     return data
