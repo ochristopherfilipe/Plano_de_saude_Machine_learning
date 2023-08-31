@@ -35,8 +35,8 @@ with st.container():
         st.write(data)
 
 with st.container():
-    st.subheader("Histograma - Distribuição dos Gastos com Plano de Saúde", divider='rainbow' )
-
+    st.subheader("Histograma - Distribuição dos Gastos com Plano de Saúde")
+    st.markdown("---")
     # Criando um histograma 
     fig, ax = plt.subplots(figsize=(6, 2))
     ax.hist(data["charges"], bins=50, edgecolor="black")
