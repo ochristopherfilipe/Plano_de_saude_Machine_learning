@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestRegressor
 st.set_page_config(layout='wide')
 
 st.title('Previsão de Gastos com Plano de Saúde')
-st.subheader('Nossa máquina de predição de custos de plano de saúde é baseada em um conjunto de dados anônimo de um dos maiores hospitais do Brasil. Exploramos informações relevantes, como idade, índice de massa corporal (IMC), número de filhos, região geográfica, sexo e tabagismo, para entender como os gastos com planos de saúde são calculados. No final da análise, oferecemos um ambiente de deploy interativo onde você pode inserir suas informações e descobrir uma estimativa do custo anual do plano de saúde com base em nosso modelo preditivo. Nosso objetivo é fornecer insights valiosos sobre como fatores individuais afetam os custos de saúde, ajudando nas decisões de cobertura médica de forma confidencial e informada.')
+st.write('Nossa máquina de predição de custos de plano de saúde é baseada em um conjunto de dados anônimo de um dos maiores hospitais do Brasil. Exploramos informações relevantes, como idade, índice de massa corporal (IMC), número de filhos, região geográfica, sexo e tabagismo, para entender como os gastos com planos de saúde são calculados. No final da análise, oferecemos um ambiente de deploy interativo onde você pode inserir suas informações e descobrir uma estimativa do custo anual do plano de saúde com base em nosso modelo preditivo. Nosso objetivo é fornecer insights valiosos sobre como fatores individuais afetam os custos de saúde, ajudando nas decisões de cobertura médica de forma confidencial e informada.')
 
 
 # Carregando a base de dados
@@ -23,17 +23,17 @@ train_data = pd.read_csv('Train_Data.csv')
 
 
 @st.cache
-def load_data(nrows):
-    data = train_data
-    return data
-with st.container():
-    data_load_state = st.text('Carregando o dataset...')
-    data = load_data(10000)
-    data_load_state.text("")
-
-    if st.checkbox('Mostrar RAW do dataset'):
-        st.subheader('Preview dos Dados')
-        st.write(data)
+    def load_data(nrows):
+        data = train_data
+        return data
+    with st.container():
+        data_load_state = st.text('Carregando o dataset...')
+        data = load_data(10000)
+        data_load_state.text("")
+    
+        if st.checkbox('Mostrar RAW do dataset'):
+            st.subheader('Preview dos Dados')
+            st.write(data)
 
 with st.container():
     st.subheader("Histograma - Distribuição dos Gastos com Plano de Saúde", divider='rainbow' )
