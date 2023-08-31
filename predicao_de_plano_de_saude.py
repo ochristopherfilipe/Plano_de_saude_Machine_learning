@@ -22,18 +22,17 @@ st.write('Nossa máquina de predição de custos de plano de saúde é baseada e
 train_data = pd.read_csv('Train_Data.csv')
 
 
-@st.cache
-    def load_data(nrows):
-        data = train_data
-        return data
-    with st.container():
-        data_load_state = st.text('Carregando o dataset...')
-        data = load_data(10000)
-        data_load_state.text("")
+def load_data(nrows):
+    data = train_data
+     return data
+with st.container():
+    data_load_state = st.text('Carregando o dataset...')
+    data = load_data(10000)
+    data_load_state.text("")
     
-        if st.checkbox('Mostrar RAW do dataset'):
-            st.subheader('Preview dos Dados')
-            st.write(data)
+    if st.checkbox('Mostrar RAW do dataset'):
+        st.subheader('Preview dos Dados')
+        st.write(data)
 
 with st.container():
     st.subheader("Histograma - Distribuição dos Gastos com Plano de Saúde", divider='rainbow' )
