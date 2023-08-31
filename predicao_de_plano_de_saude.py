@@ -44,6 +44,8 @@ with st.container():
     ax.set_ylabel("Frequência")
     ax.set_title("Histograma dos Gastos com Plano de Saúde")
     st.pyplot(fig)
+    st.write("Aqui fica claro que a maioria fica com os gastos entre R$ 4.000,00 e R$ 12.000,00. Vamos refinar isso.")
+
 
 with st.container():
     st.subheader("Verificando com Boxplot se existem outliers no dataset")
