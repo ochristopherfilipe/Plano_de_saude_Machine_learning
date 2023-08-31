@@ -24,7 +24,7 @@ train_data = pd.read_csv('Train_Data.csv')
 
 def load_data(nrows):
     data = train_data
-     return data
+    return data
 with st.container():
     data_load_state = st.text('Carregando o dataset...')
     data = load_data(10000)
